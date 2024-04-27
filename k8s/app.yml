@@ -17,10 +17,11 @@ spec:
          env: dev
    template:
       metadata:
-         app: nodejs
-         project: roboshop
-         service: catalogue
-         env: dev
+         labels:
+            app: nodejs
+            project: roboshop
+            service: catalogue
+            env: dev
       spec:
          serviceAccountName: catalogue
          containers:
@@ -62,11 +63,10 @@ metadata:
    name: catalogue
 spec:
    selector:
-      matchLabels:
-         app: nodejs
-         project: roboshop
-         service: catalogue
-         env: dev
+      app: nodejs
+      project: roboshop
+      service: catalogue
+      env: dev
    ports:
       - protocol: TCP
         port: 8080
