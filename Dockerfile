@@ -1,5 +1,5 @@
 FROM        node:18
-RUN         mkdir /App
+RUN         mkdir /app
 WORKDIR     /app
 ADD         package.json .
 ADD         server.js .
